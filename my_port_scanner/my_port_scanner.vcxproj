@@ -130,7 +130,9 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IPortScanner.h" />
+    <ClInclude Include="GlobalVariables.h" />
+    <ClInclude Include="IPortChecker.h" />
+    <ClInclude Include="PortChecker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
