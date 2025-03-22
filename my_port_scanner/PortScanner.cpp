@@ -1,6 +1,9 @@
 #include "PortScanner.h"
 #include "PortChecker.h"
 #include <iostream>
+#include <algorithm>
+
+
 
 PortScanner::PortScanner(std::string h, int start, int end, int threads)
     : host(std::move(h)), startPort(start), endPort(end), threadCount(threads),
@@ -34,19 +37,26 @@ void PortScanner::scan() {
     for (auto& t : threads) {
         t.join();
     }
-    std::cout << "\nСканирование завершено!" << std::endl;
+    std::cout << std::endl << "Сканирование завершено!" << std::endl;
 }
 
 void PortScanner::stop() {
     stopScanning = true;
 }
 
+
 void PortScanner::printResults() const {
+    std::vector<ScanResult> sortedResults = results;
+    std::sort(sortedResults.begin(), sortedResults.end(),
+        [](const ScanResult& a, const ScanResult& b) {
+            return a.port < b.port;
+        });
+
     std::cout << std::endl << "Итоговые результаты:" << std::endl;
     std::cout << "Порт\tСтатус" << std::endl;
     std::cout << "----------------" << std::endl;
 
-    for (const auto& result : results) {
+    for (const auto& result : sortedResults) {
         std::cout << result.port << "\t" << (result.isOpen ? "Открыт" : "Закрыт") << std::endl;
     }
 }
