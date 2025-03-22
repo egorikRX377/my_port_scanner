@@ -128,12 +128,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PortChecker.cpp" />
+    <ClCompile Include="PortScanner.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="IPortChecker.h" />
     <ClInclude Include="PortChecker.h" />
+    <ClInclude Include="PortScanner.h" />
+    <ClInclude Include="Validator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

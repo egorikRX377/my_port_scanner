@@ -1,1 +1,5 @@
-﻿
+﻿  Source.cpp
+C:\Users\HP\source\repos\my_port_scanner\my_port_scanner\Source.cpp(71,38): warning C4101: e: неиспользованная локальная переменная
+  Validator.cpp
+  Создание кода...
+  my_port_scanner.vcxproj -> C:\Users\HP\source\repos\my_port_scanner\x64\Debug\my_port_scanner.exe
